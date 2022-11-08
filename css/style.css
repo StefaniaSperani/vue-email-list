@@ -53,3 +53,6 @@ button:hover{
     box-shadow: 1px 0px 8px 10px var(--font-color);
     background-color: var(--myprimary1);
 }
+input:focus-visible {
+    outline: none;
+}

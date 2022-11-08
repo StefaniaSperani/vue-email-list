@@ -25,13 +25,14 @@
         <h2>Da usare come vuoi tu :D</h2>
         <div class="list">
             <ol v-if="emailList.length >= 10">
-                <li v-for="(email, index) in emailList" :key="index">
+                <li v-for="(email, index) in emailList" :key="index" ref="msg">
                     {{email}}
                 </li>
             </ol>
         </div>
         <button @click="callApi">Genera una nuova lista</button>
         <button @click="deleteList">Cancella</button>
+        <input type="text" placeholder="Inserisci una mail" v-model="addEmail" @keyup.enter="addYourEmail">
     </div>
 
     <script src="./js/script.js"></script>

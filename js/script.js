@@ -15,6 +15,7 @@ const app = createApp({
         return {
             //setto la mia lista delle email vuota
             emailList: [],
+            addEmail: ''
         }
     },
     //creo i methods, dove inserisco le funzioni
@@ -34,14 +35,22 @@ const app = createApp({
             this.emailList = [];
         },
         //creo una funzione per svuotare la lista
-        deleteList(){
+        deleteList() {
             this.emailList = [];
-        }
+        },
+        addYourEmail() {
+            this.emailList.push(this.addEmail);
+            this.$nextTick(() => {
+                const el = this.$refs.msg[this.$refs.msg.length - 1];
+                el.scrollIntoView({ behavior: "smooth" })
+            });
+                this.addEmail = [];
+            }
     },
-    //monto la funzione anche nella created, così appena 
-    //apro la pagina la lista esce subito
-    created() {
-        this.callApi();
-    }
-    //monto tutto sul div #app
-}).mount('#app')
+        //monto la funzione anche nella created, così appena 
+        //apro la pagina la lista esce subito
+        created() {
+            this.callApi();
+        }
+        //monto tutto sul div #app
+    }).mount('#app')
