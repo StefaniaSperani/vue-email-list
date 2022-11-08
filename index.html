@@ -21,7 +21,7 @@
 <body>
 
     <div id="app">
-        <h1>Ecco a te una fake mail!</h1>
+        <h1>Ecco a te una lista di fake mail!</h1>
         <h2>Da usare come vuoi tu :D</h2>
         <div class="list">
             <ol v-if="emailList.length >= 10">
@@ -30,6 +30,7 @@
                 </li>
             </ol>
         </div>
+        <button @click="callApi">Genera una nuova lista</button>
     </div>
 
     <script src="./js/script.js"></script>
