@@ -32,6 +32,10 @@ const app = createApp({
             //avendo aggiunt un button per generarne di nuove, ripulisco
             //in modo da avere sempre 10 email
             this.emailList = [];
+        },
+        //creo una funzione per svuotare la lista
+        deleteList(){
+            this.emailList = [];
         }
     },
     //monto la funzione anche nella created, così appena 
